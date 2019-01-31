@@ -155,8 +155,8 @@ def get_shop_list_by_dishes(arg_dishes, arg_person_count):
         # print('Блюда:'.format(key[arg_dishes]))
         # print('Блюда:', values["ingridient_name"])
 
-get_shop_list_by_dishes(input('\nВведите название блюд: '),
-                        input('Введите количество приглашенных: '))
+
+get_shop_list_by_dishes(input('\nВведите название блюд: '), input('Введите количество приглашенных: '))
 
 
 
