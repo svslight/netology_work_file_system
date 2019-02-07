@@ -25,7 +25,6 @@ def get_recipes(recipes_file='list_recipes.txt'):
 
 
 def get_shop_list_by_dishes(dishes, person_count):
-    dishes_list = {}
     cook_book = {
         'Омлет': [
             {'ingridient_name': 'Яйцо', 'quantity': 2, 'measure': 'шт.'},
@@ -46,6 +45,7 @@ def get_shop_list_by_dishes(dishes, person_count):
     }
 
     cook_book = {k.lower(): v for k, v in cook_book.items()}
+    dishes_list = {}
 
     for dish in dishes:
         for ingridients in cook_book[dish]:
@@ -60,15 +60,16 @@ def get_shop_list_by_dishes(dishes, person_count):
     print('Cписок продуктов с названием ингредиентов(и их количество)для блюд на', person_count, 'человека:')
     for dishes in dishes_list.values():
         print('  {}: {} {} '.format(dishes['ingridient_name'], dishes['measure'], dishes['quantity']))
-    return dishes_list
 
 
 def main_menu():
     recipes_file = input('Введите имя файла с рецептами ( list_recipes.txt ): ')
     get_recipes(recipes_file)
+
     person_count = int(input('Введите количество человек: '))
     dishes = input('Введите блюда в расчете на одного человека (через запятую): ').lower().split(', ')
     get_shop_list_by_dishes(dishes, person_count)
 
 main_menu()
+# print(globals())
 
